@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link rel="stylesheet" href="src/style/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="notes">
+      <div class="notes__sidebar">
+        <div class="notes__logo">
+          <h2>NOTE APP</h2>
+          <hr />
+        </div>
+        <div class="notes__list">
+          <div class="notes__list-item">
+            <div class="notes__list-header">
+              <div class="notes__list-title">title</div>
+              <div class="notes__list-icons">
+                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            </div>
+            <div class="notes__list-body">write some note</div>
+            <div class="notes__list-date">Monday 1:30 PM</div>
+          </div>
+        </div>
+        <button class="notes__add-btn">ADD NOTE</button>
+      </div>
+      <div class="notes__preview">
+        <div class="notes__title">
+          <input class="notes__title-input" type="text" placeholder="Note Title" />
+        </div>
+        <div class="notes__text">
+          <textarea name="" class="notes__text-input">Take Some Note</textarea>
+          <button class="notes__save-btn">Save Note</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/app.js" type="module"></script>
+  </body>
+</html>

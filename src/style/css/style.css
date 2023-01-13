@@ -1,0 +1,155 @@
+@import url('../font/iranyekan/');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'iranyekan';
+}
+:root {
+  --sidebar-color: #6d28d9;
+  --white-text-color: #fff;
+  --backgroundColor: #f6f6f6;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-family: var(--poppins);
+  background-color: var(--bg-body);
+  direction: rtl;
+}
+
+.notes {
+  display: flex;
+  background-color: var(--backgroundColor);
+}
+.notes__sidebar {
+  position: sticky;
+  border-radius: 5rem 0 0 5rem;
+  width: 400px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: var(--sidebar-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0.75rem 0.2rem;
+}
+
+.notes__logo {
+  text-align: center;
+  padding: 1rem;
+  color: var(--white-text-color);
+}
+.notes__list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+.notes__list::-webkit-scrollbar {
+  display: none;
+}
+.notes__list-item {
+  background-color: #fff;
+  margin: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+.notes__list-header,
+.notes__list-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.notes__list-icons {
+  width: 50px;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.fa-trash-can {
+  color: #ef4444;
+}
+.fa-pen-to-square {
+  color: #22c55e;
+}
+.notes__list-title,
+.notes__list-body {
+  font-size: 2rem;
+}
+.notes__list-title {
+  font-weight: bold;
+}
+
+.notes__list-date {
+  color: #94a3b8;
+  text-align: left;
+  font-style: italic;
+}
+.notes__add-btn {
+  width: 340px;
+  height: 4.8rem;
+  border-radius: 1rem;
+  margin: 2rem 1rem 3rem 1rem;
+  outline: none;
+  border: none;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #e9d5ff;
+}
+.notes__add-btn:hover {
+  opacity: 0.7;
+}
+.notes__preview {
+  width: 100%;
+}
+.notes__title-input {
+  width: 90%;
+  height: 90px;
+  margin: 2rem;
+  padding: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.notes__text {
+}
+.notes__text {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 75vh;
+  margin: 2rem;
+}
+.notes__text-input {
+  height: 100%;
+  border-radius: 1rem 1rem 0 0;
+  padding: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.notes__save-btn {
+  height: 5rem;
+  border-radius: 0 0 1rem 1rem;
+  border: none;
+  outline: none;
+  background-color: var(--sidebar-color);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.notes__save-btn:hover {
+  opacity: 0.7;
+}
