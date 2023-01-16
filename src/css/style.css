@@ -1,4 +1,4 @@
-@import url('../font/iranyekan/');
+@import url('/assets/style/fonts.css');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -181,4 +181,12 @@ body {
 }
 .notes__save-btn:hover {
   opacity: 0.7;
+}
+/* selected */
+.notes__list-item--selected {
+  background: #eeeeee;
+  color: #7c7c7c;
+  border-radius: 7px;
+  font-weight: bold;
+  padding: 5px;
 }
