@@ -1,7 +1,7 @@
 export default class NotesAppView {
-  constructor(root, handler) {
+  constructor(root, handlers) {
     this.root = root;
-    const { onNoteAdd, onNoteEdit, onNoteSelect, onNoteDelete } = handler;
+    const { onNoteAdd, onNoteEdit, onNoteSelect, onNoteDelete } = handlers;
     this.onNoteAdd = onNoteAdd;
     this.onNoteEdit = onNoteEdit;
     this.onNoteSelect = onNoteSelect;
@@ -31,7 +31,7 @@ export default class NotesAppView {
     const addNoteBtn = this.root.querySelector('.notes__add-btn');
     const inputTitle = this.root.querySelector('.notes__title-input');
     const inputTextBody = this.root.querySelector('.notes__text-input');
-
+    const saveNoteBtn = this.root.querySelector('.notes__save-btn');
     addNoteBtn.addEventListener('click', () => {
       this.onNoteAdd();
     });
@@ -39,9 +39,13 @@ export default class NotesAppView {
       inputField.addEventListener('blur', () => {
         const newTitle = inputTitle.value.trim();
         const newBody = inputTextBody.value.trim();
-
         this.onNoteEdit(newTitle, newBody);
       });
+    });
+    saveNoteBtn.addEventListener('click', () => {
+      const newTitle = inputTitle.value.trim();
+      const newBody = inputTextBody.value.trim();
+      this.onNoteEdit(newTitle, newBody);
     });
 
     // hide notes preview in first loading:
@@ -50,15 +54,14 @@ export default class NotesAppView {
   // create list item html
   _createListItemHTML(id, title, body, date) {
     const MAX_BODY_LENGTH = 50;
-
     return `
     <div class="notes__list-item" data-note-id="${id}">
     <div class="notes__list-header">
+    <div class="notes__list-title" >${title}</div>
       <div class="notes__list-icons">
         <i class="fa-solid fa-trash-can"data-note-id="${id}" ></i>
-        <i class="fa-solid fa-pen-to-square"></i>
       </div>
-      <div class="notes__list-title" >${title}</div>
+    
     </div>
     <div class="notes__list-body">
     ${body.substring(0, MAX_BODY_LENGTH)}
@@ -71,8 +74,6 @@ export default class NotesAppView {
     })}
     </div>
   </div>
-    
-    
     `;
   }
   updateNoteList(notes) {

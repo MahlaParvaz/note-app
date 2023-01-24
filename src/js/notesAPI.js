@@ -34,7 +34,7 @@ export default class NotesAPI {
       existedNotes.date = new Date().toISOString();
     } else {
       noteToSave.id = new Date().getTime();
-      noteToSave.id = new Date().toISOString();
+      noteToSave.date = new Date().toISOString();
       notes.push(noteToSave);
     }
     localStorage.setItem('notes-app', JSON.stringify(notes));
@@ -44,5 +44,4 @@ export default class NotesAPI {
     const filteredNotes = notes.filter((note) => note.id != id);
     localStorage.setItem('notes-app', JSON.stringify(filteredNotes));
   }
-  static editNotes() {}
 }
